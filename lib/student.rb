@@ -54,7 +54,7 @@ class Student
     sql = <<-SQL
       SELECT * FROM students WHERE name = (?)
     SQL
-    self.new_from_db(DB[:conn].execute(sql, name))[0]
+    self.new_from_db(DB[:conn].execute(sql, name)[0])
   end
 
   def update
